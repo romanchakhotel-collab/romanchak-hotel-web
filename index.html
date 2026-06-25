@@ -426,7 +426,8 @@ footer {
       <span style="color:rgba(234,184,181,0.3);font-size:11px;">/</span>
       <button id="lang-en" onclick="setLang('en')">EN</button>
     </div>
-    <a href="#reservation" class="header-cta" data-i18n="headerCta">予約する</a>
+    <a href="#shop" class="header-cta" style="background:rgba(255,255,255,0.1);border:1px solid rgba(234,184,181,0.35);margin-right:6px;" id="headerShopBtn">ショップ</a>
+    <a href="#reservation" class="header-cta" data-i18n="headerCta">予約</a>
   </div>
 </header>
 
@@ -499,7 +500,9 @@ footer {
     </p>
     <div class="menu-grid">
       <div class="menu-card">
-        <div class="menu-card-img">🍛</div>
+        <div class="menu-card-img" style="padding:0;background:none;">
+          <img src="images/biryani.jpg" alt="マラバールチキンビリヤニ" style="width:100%;height:100%;object-fit:cover;">
+        </div>
         <div class="menu-card-body">
           <div class="menu-card-slot" data-i18n="slot1Label">昼1部 11:30〜12:45</div>
           <div class="menu-card-name">マラバール<br>チキンビリヤニ</div>
@@ -687,10 +690,10 @@ var lang = 'ja';
 var I18N = {
   ja: {
     navConcept:'コンセプト', navMenu:'メニュー', navShop:'ショップ', navAccess:'アクセス',
-    headerCta:'予約する',
+    headerCta:'予約',
     heroWelcome:'ALL WELCOME',
     heroLine1:'"From India', heroLine2:'With Love"',
-    heroSub:'ケーララ・ハイデラバード・コルカタ・デリー。<br>インドの各地から、愛情をこめた味をお届けします。',
+    heroSub:'インドで体験した感動を、愛情を込めてお届けします。',
     heroMenu:'メニューを見る', heroCta:'ご予約はこちら', heroScroll:'Scroll',
     conceptLabel:'Our Story',
     conceptTitle:'インドの味を、<em>愛をこめて</em>',
@@ -747,7 +750,7 @@ var I18N = {
     headerCta:'Reserve',
     heroWelcome:'ALL WELCOME',
     heroLine1:'"From India', heroLine2:'With Love"',
-    heroSub:'Kerala · Hyderabad · Kolkata · Delhi.<br>Flavours of India, delivered with love.',
+    heroSub:'The wonder of India, delivered with love.',
     heroMenu:'View Menu', heroCta:'Make a Reservation', heroScroll:'Scroll',
     conceptLabel:'Our Story',
     conceptTitle:'The Taste of India, <em>With Love</em>',
@@ -1051,6 +1054,8 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   var all=document.getElementById('shopAllLink');
   if(all){all.href=SHOP_URL; all.target='_blank'; all.rel='noreferrer';}
+  var headerShop=document.getElementById('headerShopBtn');
+  if(headerShop){headerShop.href=SHOP_URL; headerShop.target='_blank'; headerShop.rel='noreferrer';}
 });
 
 // ── NEXT button fix ──────────────────────────────────────────
