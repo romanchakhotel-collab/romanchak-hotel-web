@@ -422,13 +422,17 @@ section { padding: var(--section-gap) 24px; }
 }
 .access-info td:last-child { color: var(--charcoal); }
 .access-map {
-  width: 100%; min-height: 280px;
+  width: 100%; display: flex; flex-direction: column; gap: 10px;
+}
+.access-map-frame {
+  flex: 1; min-height: 280px;
   background: linear-gradient(135deg, #e8dfd4, #d4c9bc);
   border-radius: 12px;
   border: 1px solid var(--line);
   overflow: hidden;
 }
 .access-map iframe { width: 100%; height: 100%; min-height: 280px; border: none; display: block; }
+.access-map-note { font-size: 12px; color: var(--charcoal); line-height: 1.8; }
 
 /* ─── FOOTER ──────────────────────────────────────── */
 footer {
@@ -710,16 +714,18 @@ footer {
         </table>
       </div>
       <div class="access-map">
-        <iframe
-          src="https://maps.google.com/maps?q=長野県伊那市西箕輪3900-692+ROMANCHAK+HOTEL&output=embed&hl=ja"
-          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="access-map-frame">
+          <iframe
+            src="https://maps.google.com/maps?q=長野県伊那市西箕輪3900-692+ROMANCHAK+HOTEL&output=embed&hl=ja"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="access-map-note">
+          ※Google Mapのナビ機能を使用してください。カーナビのナビでは別の位置が表示される可能性があります。&nbsp;
+          <a href="https://maps.app.goo.gl/cxh5uEXC7d87hzAt9" target="_blank" rel="noreferrer"
+             style="color:var(--saffron);text-decoration:underline;">Google Mapでナビを開く →</a>
+        </p>
       </div>
     </div>
-    <p style="font-size:12px;color:var(--charcoal);margin-top:16px;line-height:1.8;">
-      ※Google Mapのナビ機能を使用してください。カーナビのナビでは別の位置が表示される可能性があります。&nbsp;
-      <a href="https://maps.app.goo.gl/cxh5uEXC7d87hzAt9" target="_blank" rel="noreferrer"
-         style="color:var(--saffron);text-decoration:underline;">Google Mapでナビを開く →</a>
-    </p>
   </div>
 </section>
 
