@@ -938,7 +938,12 @@ function formatMonth(){
   if(lang==='en'){var ms=L('months');return ms?ms[cur.m-1]+' '+cur.y:cur.y+'-'+pad(cur.m);}
   return cur.y+'年'+cur.m+'月';
 }
-function updateMonthLabel(){var e=document.getElementById('mlabel');if(e)e.textContent=formatMonth();}
+function updateMonthLabel(){
+  var e=document.getElementById('mlabel');if(e)e.textContent=formatMonth();
+  var t=new Date();var isCurrentMonth=(cur.y===t.getFullYear()&&cur.m===t.getMonth()+1);
+  var prev=document.getElementById('prev');
+  if(prev){prev.style.visibility=isCurrentMonth?'hidden':'visible';}
+}
 function todayDs(){var t=new Date();return t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate());}
 
 function snapshotForm(){
