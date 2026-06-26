@@ -348,7 +348,7 @@ section { padding: var(--section-gap) 24px; }
 
 /* ─── ACCESS ──────────────────────────────────────── */
 #access { background: var(--ivory); }
-.access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
 .access-info table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .access-info td {
   padding: 10px 0; border-bottom: 1px solid #ead7bf;
@@ -359,13 +359,13 @@ section { padding: var(--section-gap) 24px; }
 }
 .access-info td:last-child { color: var(--charcoal); }
 .access-map {
-  width: 100%; aspect-ratio: 4/3;
+  width: 100%; min-height: 280px;
   background: linear-gradient(135deg, #e8dfd4, #d4c9bc);
-  border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  font-size: 14px; color: var(--muted); border: 1px solid var(--line);
+  border-radius: 12px;
+  border: 1px solid var(--line);
   overflow: hidden;
 }
-.access-map iframe { width: 100%; height: 100%; border: none; }
+.access-map iframe { width: 100%; height: 100%; min-height: 280px; border: none; display: block; }
 
 /* ─── FOOTER ──────────────────────────────────────── */
 footer {
@@ -650,14 +650,13 @@ footer {
         <iframe
           src="https://maps.google.com/maps?q=長野県伊那市西箕輪3900-692+ROMANCHAK+HOTEL&output=embed&hl=ja"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <p style="font-size:12px;color:var(--charcoal);margin-top:10px;line-height:1.7;">
-          ※Google Mapのナビ機能を使用してください。<br>
-          カーナビのナビでは別の位置が表示される可能性があります。<br>
-          <a href="https://maps.app.goo.gl/cxh5uEXC7d87hzAt9" target="_blank" rel="noreferrer"
-             style="color:var(--saffron);text-decoration:underline;">Google Mapでナビを開く →</a>
-        </p>
       </div>
     </div>
+    <p style="font-size:12px;color:var(--charcoal);margin-top:16px;line-height:1.8;">
+      ※Google Mapのナビ機能を使用してください。カーナビのナビでは別の位置が表示される可能性があります。&nbsp;
+      <a href="https://maps.app.goo.gl/cxh5uEXC7d87hzAt9" target="_blank" rel="noreferrer"
+         style="color:var(--saffron);text-decoration:underline;">Google Mapでナビを開く →</a>
+    </p>
   </div>
 </section>
 
