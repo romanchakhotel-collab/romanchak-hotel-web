@@ -1062,7 +1062,7 @@ function selectSlot(ds,idx,skipScroll){
   picked={ds:ds,slot:s}; selectedSlotIdx=idx;
   document.querySelectorAll('.slot').forEach(function(el){el.classList.remove('selected');});
   var se=document.getElementById('slot-'+idx); if(se)se.classList.add('selected');
-  var maxCount=s.remain, menuText=slotMenuText(s), detailText=slotMenuDetail(s);
+  var maxCount=Math.min(s.remain, 4), menuText=slotMenuText(s), detailText=slotMenuDetail(s);
   var selectedMenu=menuText?'<div class="theme-box"><b>'+L('menuLbl')+'</b><br>'+esc(menuText)
     +(detailText?'<br><br><b>'+L('detailLbl')+'</b><br>'+esc(detailText):'')+' </div>':'';
   document.getElementById('formArea').innerHTML=
@@ -1070,7 +1070,7 @@ function selectSlot(ds,idx,skipScroll){
     +'<div class="pick-info">'+L('selectedPrefix')+ds+' '+esc(displaySlotName(s))+' ('+timeRange(s)+')</div>'
     +selectedMenu
     +'<div class="row2">'
-    +'<div class="field"><label>'+L('peopleLabel')+'</label><input id="f_count" type="number" min="1" max="'+maxCount+'" value="1"></div>'
+    +'<div class="field"><label>'+L('peopleLabel')+'</label><input id="f_count" type="number" min="1" max="'+maxCount+'" value="1"><p style="font-size:12px;color:#76502b;margin-top:6px;">※ 1回の予約は4名まで。5名以上はお電話または4名ごとに代表者を分けてご予約ください。</p></div>'
     +'<div class="field"><label>'+L('nameLabel')+'</label><input id="f_name" type="text" placeholder="'+esc(L('namePlaceholder'))+'"></div>'
     +'</div>'
     +'<div class="row2">'
