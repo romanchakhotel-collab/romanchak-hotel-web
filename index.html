@@ -163,6 +163,13 @@ body {
   color: var(--ivory); line-height: 1.15; margin-bottom: 32px;
 }
 .hero-quote span { display: block; }
+.hero-brand { margin-bottom: 32px; }
+.hero-brand-name {
+  font-size: clamp(26px, 6.5vw, 52px); font-weight: 800;
+  letter-spacing: 0.14em; color: var(--ivory); text-transform: uppercase;
+  line-height: 1.1; margin-bottom: 10px;
+}
+.hero-brand-tagline { font-size: 13px; color: rgba(234,184,181,0.6); letter-spacing: 0.1em; }
 .hero-sub {
   font-size: 14px; color: rgba(251,241,223,0.65);
   margin-bottom: 40px; line-height: 1.7; max-width: 420px;
@@ -485,7 +492,7 @@ footer {
      HEADER
 ════════════════════════════════════ -->
 <header class="site-header">
-  <a class="header-logo" href="#top">
+  <a class="header-logo" href="#top" style="display:none;">
     <span class="name">ROMANCHAK HOTEL</span>
     <span class="tagline">இந்தியாவின் சுவை</span>
   </a>
@@ -510,11 +517,10 @@ footer {
      HERO
 ════════════════════════════════════ -->
 <section class="hero" id="top">
-  <p class="hero-welcome" data-i18n="heroWelcome">ALL WELCOME</p>
-  <h1 class="hero-quote">
-    <span data-i18n="heroLine1">"From India</span>
-    <span data-i18n="heroLine2">With Love"</span>
-  </h1>
+  <div class="hero-brand">
+    <p class="hero-brand-name">ROMANCHAK HOTEL</p>
+    <p class="hero-brand-tagline">இந்தியாவின் சுவை</p>
+  </div>
   <p class="hero-sub" data-i18n="heroSub">
     ケーララ・ハイデラバード・コルカタ・デリー。<br>
     インドの各地から、愛情をこめた味をお届けします。
